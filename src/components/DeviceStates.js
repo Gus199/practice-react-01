@@ -1,6 +1,9 @@
 import React from 'react'
+import DeviceContext from '../context/DeviceContext'
+import {useContext} from 'react'
 
-function DeviceStates({devices}) {
+function DeviceStates() {
+  const {devices} = useContext(DeviceContext)
     let average = devices.reduce((acc, cur) => {
         return acc + cur.rating
     }, 0)/ devices.length
