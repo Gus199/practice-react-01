@@ -25,8 +25,11 @@ const fetchDevices = async () => {
     setDevices(data)
     setIsLoading(false)
 }
-  const deleteDevice = (id) => {
+
+// Delete Device:
+  const deleteDevice = async(id) => {
     if (window.confirm("Are you sure you want to delete?")) {
+      await fetch(`/devices/${id}`, {method: 'DELETE'})
       setDevices(devices.filter((device) => device.id !== id));
     }
   };
@@ -56,9 +59,17 @@ const fetchDevices = async () => {
   };
 
   //   Update Device item:
-  const updateDevcice = (id, updItem) => {
+  const updateDevcice = async(id, updItem) => {
+    const response = await fetch(`/devices/${id}`, {
+     method: 'PUT',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(updItem)
+    })
+    const data = await response.json()
     setDevices(
-      devices.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+      devices.map((item) => (item.id === id ? { ...item, ...data } : item))
     );
   };
   return (
