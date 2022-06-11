@@ -1,12 +1,12 @@
-import {useSatet, useContext, useEffect} from 'react'
-import DeviceContext from "../context/DeviceContext"
+// import {useSatet, useContext, useEffect} from 'react'
+// import DeviceContext from "../context/DeviceContext"
 function RatingSelect({ select, selected }) {
-  const {  deviceEdit} = useContext(DeviceContext)
+  // const {  deviceEdit} = useContext(DeviceContext)
     // NOTE: We don't need local state here as it's a duplicate of parent state
     // also no real need for useEffect or context
-    useEffect(() => {
-      select(deviceEdit.item.rating)
-    }, [deviceEdit])
+    // useEffect(() => {
+    //   select(deviceEdit.item.rating)
+    // }, [deviceEdit])
   
     const handleChange = (e) => {
       select(+e.currentTarget.value)

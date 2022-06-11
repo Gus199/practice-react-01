@@ -1,6 +1,6 @@
-import Card from "./share/Card"
+import Card from "./shared/Card"
 import {useState} from 'react'
-import Button from "./share/Button"
+import Button from "./shared/Button"
 import RatingSelect from "./RatingSelect"
 import {useContext, useEffect} from 'react'
 import DeviceContext from "../context/DeviceContext"

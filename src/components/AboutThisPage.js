@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Card from './share/Card'
+import Card from './shared/Card'
 
 function AboutThisPage() {
   return (

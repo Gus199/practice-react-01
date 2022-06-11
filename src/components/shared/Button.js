@@ -1,5 +1,3 @@
-
-   
 import PropTypes from 'prop-types'
 
 function Button({ children, version, type, isDisabled }) {
